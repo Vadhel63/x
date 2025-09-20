@@ -1,9 +1,11 @@
 # 🍬 Sweet Shop Management System
 
+---
+
 ## 📖 Project Overview
 The **Sweet Shop Management System** is a full-stack web application for managing sweet shop operations:  
 - User authentication  
-- Role-based dashboards (User/ Admin)  
+- Role-based dashboards (User / Admin)  
 - Sweet inventory management  
 - Search, filter, purchase, and restock functionality  
 
@@ -19,9 +21,9 @@ This project was developed as part of the **Incubyte Assessment Kata**, focusing
 3. **Refactor:** Clean and optimize code while keeping tests passing  
 
 **Benefits:**  
-- Clean, readable code  
-- Early bug detection  
-- Confidence in code through automated tests  
+- ✅ Clean, readable code  
+- ✅ Early bug detection  
+- ✅ Confidence in code through automated tests  
 
 ---
 
@@ -37,27 +39,27 @@ This project was developed as part of the **Incubyte Assessment Kata**, focusing
 - React (Vite + TypeScript)  
 - Tailwind CSS for responsive UI  
 - React Router for navigation  
-
----
+- React Hook Form + Zod for validation  
+- Vitest + Testing Library for component testing  
 
 
 ---
 
 ## 🛠 Features
 
-### Authentication
+### 🔑 Authentication
 - Register: `POST /api/auth/register`  
 - Login: `POST /api/auth/login`  
 - JWT-based authentication  
 - Role-based access (Customer / Admin)  
 
-### Admin Sweet Management
+### 🍭 Admin Sweet Management
 - Add sweet: `POST /api/sweets`  
 - Update sweet: `PUT /api/sweets/:id`  
 - Delete sweet: `DELETE /api/sweets/:id`  
 - Restock sweet: `POST /api/sweets/:id/restock`  
 
-### Customer Features
+### 🛒 Customer Features
 - View all sweets: `GET /api/sweets`  
 - Search / Filter sweets: `GET /api/sweets/search`  
 - Purchase sweet: `POST /api/sweets/:id/purchase`  
@@ -82,59 +84,84 @@ This project was developed as part of the **Incubyte Assessment Kata**, focusing
 
 ## ⚙️ Installation & Setup
 
-### Prerequisites
+### 💻 Prerequisites
 - Node.js >=18  
 - MongoDB (local or cloud)
 
-### Backend Setup
+---
+
+### 🏗 Backend Setup
+
+```bash
+cd sweet-shop-backend
+npm install                 # Install dependencies
+npm install jest supertest ts-jest @types/jest --save-dev  # Install testing libraries
+npm run dev                 # Run backend server
+` ```
+
+Frontend Setup
+cd sweet-shop-frontend
+npm install                                        # Install dependencies
+npm install vitest @testing-library/react @testing-library/jest-dom --save-dev  # Install testing libraries
+npm run dev                                        # Run frontend server
+
+🌿 Environment Variables
+
+Backend (.env)
+
+PORT=5000
+MONGO_URI=<your-mongodb-url>
+JWT_SECRET=<your_secret_key>
+
+
+Frontend (.env)
+
+VITE_API_URL=http://localhost:5000/api
+
+🧪 Running Tests
+
+Backend Tests (Jest + Supertest)
 
 cd sweet-shop-backend
-npm install
-npm run dev      # Runs backend
-npm test         # Run Jest tests
+npm test          # Runs all backend test cases
 
+
+Frontend Tests (Vitest + Testing Library)
 
 cd sweet-shop-frontend
-npm install
-npm run dev      # Runs frontend
----
+npm run test      # Runs all frontend test cases
 
-🧪 Running Backend Tests
-npm test             # Runs all Jest + Supertest test cases
+📸 Screenshots
+✅ Test Cases
 
----
-Backend Test Screenshot:
+Backend Tests:
 
 
-🏗 Frontend Setup
-cd sweet-shop-frontend
-npm install          # Install dependencies
-npm install vitest @testing-library/react @testing-library/jest-dom --save-dev  # Testing libs
-npm run dev          # Runs frontend dev server
-
-🧪 Running Frontend Tests
-npm run test         # Runs all Vitest + Testing Library test cases
+Frontend Tests:
 
 
-Frontend Test Screenshot:
+🖥 Application Pages
+
+Admin Dashboard – Add Sweet:
 
 
-📸 Website Screenshots
-🖥 Admin Dashboard – Add Sweet
+Admin Dashboard – Sweet Inventory:
 
-📋 Admin Dashboard – Sweet Inventory
 
-🛒 Customer Dashboard – Purchase Sweets
+Customer Dashboard – Purchase Sweets:
 
-🔍 Search & Filter Functionality
 
-🔁 TDD Flow – Red → Green → Refactor
+Search & Filter Functionality:
+
+
+TDD Flow – Red → Green → Refactor:
+
 
 🤖 AI Usage
 
 Tools: ChatGPT
 
-How AI was used:
+Usage:
 
 Generated boilerplate for backend controllers/routes/models
 
@@ -164,3 +191,6 @@ This project demonstrates:
 Thank you Incubyte for this assessment and for encouraging TDD, clean coding, and AI-assisted development.
 
 — Milan Vadhel
+
+## 🗂 Project Structure
+

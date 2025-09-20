@@ -1,135 +1,99 @@
-🍬 Sweet Shop Management System
-📖 Project Overview
+# 🍬 Sweet Shop Management System
 
-The Sweet Shop Management System is a full-stack web application for managing sweet shop operations:
+## 📖 Project Overview
+The **Sweet Shop Management System** is a full-stack web application for managing sweet shop operations:  
+- User authentication  
+- Role-based dashboards (Customer / Admin)  
+- Sweet inventory management  
+- Search, filter, purchase, and restock functionality  
 
-User authentication
+This project was developed as part of the **Incubyte Assessment Kata**, focusing on **Test-Driven Development (TDD)**, clean coding, and responsible AI usage.
 
-Role-based dashboards (Customer / Admin)
+---
 
-Sweet inventory management
+## 🔁 Test-Driven Development (TDD)
+**TDD Workflow:** Red → Green → Refactor  
 
-Search, filter, purchase, and restock functionality
+1. **Red:** Write a failing test  
+2. **Green:** Implement minimum code to pass  
+3. **Refactor:** Clean and optimize code while keeping tests passing  
 
-This project was developed as part of the Incubyte Assessment Kata, focusing on Test-Driven Development (TDD), clean coding, and responsible AI usage.
+**Benefits:**  
+- Clean, readable code  
+- Early bug detection  
+- Confidence in code through automated tests  
 
-🔁 Test-Driven Development (TDD)
+---
 
-TDD Workflow: Red → Green → Refactor
+## 🚀 Tech Stack
 
-Red: Write a failing test
+**Backend**  
+- Node.js + Express + TypeScript  
+- MongoDB (Mongoose ODM)  
+- JWT Authentication + bcrypt  
+- Jest + Supertest for testing  
 
-Green: Implement minimum code to pass
+**Frontend**  
+- React (Vite + TypeScript)  
+- Tailwind CSS for responsive UI  
+- React Router for navigation  
 
-Refactor: Clean and optimize code while keeping tests passing
+---
 
-Benefits:
 
-Clean, readable code
+---
 
-Early bug detection
+## 🛠 Features
 
-Confidence in code through automated tests
+### Authentication
+- Register: `POST /api/auth/register`  
+- Login: `POST /api/auth/login`  
+- JWT-based authentication  
+- Role-based access (Customer / Admin)  
 
-🚀 Tech Stack
+### Admin Sweet Management
+- Add sweet: `POST /api/sweets`  
+- Update sweet: `PUT /api/sweets/:id`  
+- Delete sweet: `DELETE /api/sweets/:id`  
+- Restock sweet: `POST /api/sweets/:id/restock`  
 
-Backend
+### Customer Features
+- View all sweets: `GET /api/sweets`  
+- Search / Filter sweets: `GET /api/sweets/search`  
+- Purchase sweet: `POST /api/sweets/:id/purchase`  
 
-Node.js + Express + TypeScript
+---
 
-MongoDB (Mongoose ODM)
+## ⚡ API Endpoints
 
-JWT Authentication + bcrypt
+| Method | Endpoint | Description | Access |
+|--------|----------|-------------|--------|
+| POST   | /api/auth/register | Register new user | Public |
+| POST   | /api/auth/login | Login user | Public |
+| POST   | /api/sweets | Add a sweet | Admin |
+| GET    | /api/sweets | List all sweets | Auth |
+| GET    | /api/sweets/search | Search sweets | Auth |
+| PUT    | /api/sweets/:id | Update sweet | Admin |
+| DELETE | /api/sweets/:id | Delete sweet | Admin |
+| POST   | /api/sweets/:id/purchase | Purchase sweet | Auth |
+| POST   | /api/sweets/:id/restock | Restock sweet | Admin |
 
-Jest + Supertest for testing
+---
 
-Frontend
+## ⚙️ Installation & Setup
 
-React (Vite + TypeScript)
+### Prerequisites
+- Node.js >=18  
+- MongoDB (local or cloud)
 
-Tailwind CSS for responsive UI
-
-React Hook Form + Zod for validation
-
-React Router for navigation
-
-React Hot Toast for notifications
-
-🗂 Project Structure
-sweet-shop-backend/
-├─ src/
-│  ├─ controllers/
-│  ├─ models/
-│  ├─ routes/
-│  ├─ middleware/
-│  ├─ tests/
-│  └─ app.ts
-└─ package.json
-
-sweet-shop-frontend/
-├─ src/
-│  ├─ components/
-│  ├─ pages/
-│  ├─ services/
-│  ├─ tests/
-│  ├─ App.tsx
-│  └─ main.tsx
-└─ package.json
-
-🛠 Features
-Authentication
-
-Register: POST /api/auth/register
-
-Login: POST /api/auth/login
-
-JWT-based authentication
-
-Role-based access (Customer / Admin)
-
-Admin Sweet Management
-
-Add sweet: POST /api/sweets
-
-Update sweet: PUT /api/sweets/:id
-
-Delete sweet: DELETE /api/sweets/:id
-
-Restock sweet: POST /api/sweets/:id/restock
-
-Customer Features
-
-View all sweets: GET /api/sweets
-
-Search / Filter sweets: GET /api/sweets/search
-
-Purchase sweet: POST /api/sweets/:id/purchase
-
-⚡ API Endpoints
-Method	Endpoint	Description	Access
-POST	/api/auth/register	Register new user	Public
-POST	/api/auth/login	Login user	Public
-POST	/api/sweets	Add a sweet	Admin
-GET	/api/sweets	List all sweets	Auth
-GET	/api/sweets/search	Search sweets	Auth
-PUT	/api/sweets/:id	Update sweet	Admin
-DELETE	/api/sweets/:id	Delete sweet	Admin
-POST	/api/sweets/:id/purchase	Purchase sweet	Auth
-POST	/api/sweets/:id/restock	Restock sweet	Admin
-⚙️ Installation & Setup
-Prerequisites
-
-Node.js >=18
-
-MongoDB (local or cloud)
-
-Backend Setup
+### Backend Setup
+```bash
 cd sweet-shop-backend
 npm install
 npm run dev      # Runs backend
 npm test         # Run Jest tests
 
-Frontend Setup
+
 cd sweet-shop-frontend
 npm install
 npm run dev      # Runs frontend
@@ -138,15 +102,14 @@ Environment Variables
 
 Backend (.env)
 
-PORT=3000
+PORT=5000
 MONGO_URI=<your-mongodb-url>
 JWT_SECRET=<your_secret_key>
 
 
 Frontend (.env)
 
-VITE_API_URL=http://localhost:3000/api
-
+VITE_API_URL=http://localhost:5000/api
 🧪 Testing
 
 Backend: Jest + Supertest
@@ -213,3 +176,16 @@ End-to-end integration between backend and frontend
 Thank you Incubyte for this assessment and for encouraging TDD, clean coding, and AI-assisted development.
 
 — Milan Vadhel
+
+
+---
+
+This is fully **terminal-friendly** and will render **perfectly on GitHub**.  
+
+If you want, I can also make a **version with all headings, lists, and images perfectly aligned and pre-formatted for copy-paste**, including **TDD flow diagram using ASCII art** for terminal preview.  
+
+Do you want me to do that?
+
+
+## 🗂 Project Structure
+

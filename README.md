@@ -1,119 +1,215 @@
-TDD Kata: Sweet Shop Management System
+🍬 Sweet Shop Management System
+📖 Project Overview
 
-Objective
+The Sweet Shop Management System is a full-stack web application for managing sweet shop operations:
 
-The goal of this kata is to design, build, and test a full-stack Sweet Shop Management System. This project will test your skills in API development, database management, frontend implementation, testing, and modern development workflows, including the use of AI tools.
+User authentication
 
-Core Requirements
+Role-based dashboards (Customer / Admin)
 
-1. Backend API (RESTful)
+Sweet inventory management
 
-You are to build a robust backend API that will serve as the brain of the application.
+Search, filter, purchase, and restock functionality
 
-· Technology: Choose one of the following: Node.js/TypeScript (with Express/NestJS), Python (with Django/FastAPI), Java (with Spring Boot), or Ruby (with Rails).
+This project was developed as part of the Incubyte Assessment Kata, focusing on Test-Driven Development (TDD), clean coding, and responsible AI usage.
 
-· Database: The application must connect to a database (e.g., PostgreSQL, MongoDB, SQLite). An in-memory database is not sufficient.
+🔁 Test-Driven Development (TDD)
 
-· User Authentication:
+TDD Workflow: Red → Green → Refactor
 
-o Users must be able to register and log in.
+Red: Write a failing test
 
-o Implement token-based authentication (e.g., JWT) to secure certain API endpoints.
+Green: Implement minimum code to pass
 
-· API Endpoints:
+Refactor: Clean and optimize code while keeping tests passing
 
-o Auth: POST /api/auth/register, POST /api/auth/login
+Benefits:
 
-o Sweets (Protected):
+Clean, readable code
 
-§ POST /api/sweets: Add a new sweet.
+Early bug detection
 
-§ GET /api/sweets: View a list of all available sweets.
+Confidence in code through automated tests
 
-§ GET /api/sweets/search: Search for sweets by name, category, or price range.
+🚀 Tech Stack
 
-§ PUT /api/sweets/:id: Update a sweet's details.
+Backend
 
-§ DELETE /api/sweets/:id: Delete a sweet (Admin only).
+Node.js + Express + TypeScript
 
-o Inventory (Protected):
+MongoDB (Mongoose ODM)
 
-§ POST /api/sweets/:id/purchase: Purchase a sweet, decreasing its quantity.
+JWT Authentication + bcrypt
 
-§ POST /api/sweets/:id/restock: Restock a sweet, increasing its quantity (Admin only).
+Jest + Supertest for testing
 
-Each sweet must have a unique ID, name, category, price, and quantity in stock.
+Frontend
 
-2. Frontend Application
+React (Vite + TypeScript)
 
-You must build a modern, single-page application (SPA) to interact with your backend API.
+Tailwind CSS for responsive UI
 
-· Technology: You must use a modern frontend framework like React, Vue, Angular, or Svelte.
+React Hook Form + Zod for validation
 
-· Functionality:
+React Router for navigation
 
-o User registration and login forms.
+React Hot Toast for notifications
 
-o A dashboard or homepage to display all available sweets.
+🗂 Project Structure
+sweet-shop-backend/
+├─ src/
+│  ├─ controllers/
+│  ├─ models/
+│  ├─ routes/
+│  ├─ middleware/
+│  ├─ tests/
+│  └─ app.ts
+└─ package.json
 
-o Functionality to search and filter sweets.
+sweet-shop-frontend/
+├─ src/
+│  ├─ components/
+│  ├─ pages/
+│  ├─ services/
+│  ├─ tests/
+│  ├─ App.tsx
+│  └─ main.tsx
+└─ package.json
 
-o A "Purchase" button on each sweet, which should be disabled if the quantity is zero.
+🛠 Features
+Authentication
 
-o (For Admin Users) Forms/UI to add, update, and delete sweets.
+Register: POST /api/auth/register
 
-· Design: This is a chance to show your creativity. The application should be visually appealing, responsive, and provide a great user experience.
+Login: POST /api/auth/login
 
-Process & Technical Guidelines
+JWT-based authentication
 
-1. Test-Driven Development (TDD)
+Role-based access (Customer / Admin)
 
-Write tests before implementing functionality. We expect to see a clear "Red-Green-Refactor" pattern in your commit history, especially for the backend logic. Aim for high test coverage with meaningful test cases.
+Admin Sweet Management
 
-2. Clean Coding Practices
+Add sweet: POST /api/sweets
 
-Write clean, readable, and maintainable code. Follow SOLID principles and other best practices in software design. Your code should be well-documented with meaningful comments and clear naming conventions.
+Update sweet: PUT /api/sweets/:id
 
-3. Git & Version Control
+Delete sweet: DELETE /api/sweets/:id
 
-Use Git for version control. Commit your changes frequently with clear, descriptive messages that narrate your development journey.
+Restock sweet: POST /api/sweets/:id/restock
 
-4. AI Usage Policy (Important)
+Customer Features
 
-We believe AI is a critical tool in the modern software development lifecycle. You are encouraged and expected to use AI tools. However, you must be transparent about it.
+View all sweets: GET /api/sweets
 
-· AI Co-authorship: For every commit where you used an AI tool (for generating boilerplate, writing tests, debugging, etc.), you must add the AI as a co-author.
+Search / Filter sweets: GET /api/sweets/search
 
-How to add a co-author: At the end of your commit message, add two empty lines, followed by the co-author trailer.
+Purchase sweet: POST /api/sweets/:id/purchase
 
-git commit -m "feat: Implement user registration endpoint Used an AI assistant to generate the initial boilerplate for the controller and service, then manually added validation logic. Co-authored-by: AI Tool Name <AI@users.noreply.github.com>"
+⚡ API Endpoints
+Method	Endpoint	Description	Access
+POST	/api/auth/register	Register new user	Public
+POST	/api/auth/login	Login user	Public
+POST	/api/sweets	Add a sweet	Admin
+GET	/api/sweets	List all sweets	Auth
+GET	/api/sweets/search	Search sweets	Auth
+PUT	/api/sweets/:id	Update sweet	Admin
+DELETE	/api/sweets/:id	Delete sweet	Admin
+POST	/api/sweets/:id/purchase	Purchase sweet	Auth
+POST	/api/sweets/:id/restock	Restock sweet	Admin
+⚙️ Installation & Setup
+Prerequisites
 
-· README Documentation: Your README.md file must include a detailed section titled "My AI Usage". In this section, you must describe:
+Node.js >=18
 
-o Which AI tools you used (e.g., GitHub Copilot, ChatGPT, Gemini, etc.).
+MongoDB (local or cloud)
 
-o How you used them (e.g., "I used Gemini to brainstorm API endpoint structures," or "I asked Copilot to generate unit tests for my service layer").
+Backend Setup
+cd sweet-shop-backend
+npm install
+npm run dev      # Runs backend
+npm test         # Run Jest tests
 
-o Your reflection on how AI impacted your workflow.
+Frontend Setup
+cd sweet-shop-frontend
+npm install
+npm run dev      # Runs frontend
 
-· Interview Discussion: Be prepared to discuss your AI usage in detail during the interview. We are interested in how you leverage these tools effectively and responsibly.
+Environment Variables
 
-Deliverables
+Backend (.env)
 
-1. A public Git repository link (e.g., on GitHub, GitLab).
+PORT=3000
+MONGO_URI=<your-mongodb-url>
+JWT_SECRET=<your_secret_key>
 
-2. A comprehensive README.md file that includes:
 
-a. A clear explanation of the project.
+Frontend (.env)
 
-b. Detailed instructions on how to set up and run the project locally (both backend and frontend).
+VITE_API_URL=http://localhost:3000/api
 
-c. Screenshots of your final application in action.
+🧪 Testing
 
-d. The mandatory "My AI Usage" section.
+Backend: Jest + Supertest
+Frontend: Vitest
 
-3. A test report showing the results of your test suite.
+cd backend
+npm test
 
-4. (Optional - Brownie Points) A link to the deployed, live application on a platform like Vercel, Netlify, Heroku, or AWS.
 
-Note: Plagiarism is strictly forbidden. While we encourage AI assistance, submitting code copied from other repositories or developers will result in immediate rejection. We want to see your work, augmented by modern tools.# x
+Backend Test Screenshot:
+
+
+Frontend Test Screenshot:
+
+
+📸 Screenshots
+
+Admin – Add Sweet:
+
+
+Admin – Sweet Inventory:
+
+
+Customer – Purchase Sweets:
+
+
+Search & Filter:
+
+
+TDD Flow – Red → Green → Refactor:
+
+
+🤖 AI Usage
+
+Tools: ChatGPT
+
+Usage:
+
+Generated boilerplate for backend controllers/routes/models
+
+Created Jest + Vitest tests for TDD flow
+
+Designed React components (Login, Signup, Dashboard)
+
+Debugging and TypeScript fixes
+
+Reflection:
+AI accelerated boilerplate creation, reduced repetitive coding, and helped focus on business logic and architecture. All code was manually reviewed and tested.
+
+🚀 Final Thoughts
+
+This project demonstrates:
+
+Test-Driven Development (TDD)
+
+Clean, modular code design
+
+Modern frontend UI with React + Tailwind
+
+End-to-end integration between backend and frontend
+
+🙏 Acknowledgements
+
+Thank you Incubyte for this assessment and for encouraging TDD, clean coding, and AI-assisted development.
+
+— Milan Vadhel

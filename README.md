@@ -99,55 +99,42 @@ npm install
 npm run dev      # Runs frontend
 ---
 
-Environment Variables
-
-Backend (.env)
-
-PORT=5000
-MONGO_URI=<your-mongodb-url>
-JWT_SECRET=<your_secret_key>
-
-
-Frontend (.env)
-
-VITE_API_URL=http://localhost:5000/api
-🧪 Testing
-
-Backend: Jest + Supertest
-Frontend: Vitest
-
-cd backend
-npm test
+🧪 Running Backend Tests
+npm test             # Runs all Jest + Supertest test cases
 
 
 Backend Test Screenshot:
 
 
+🏗 Frontend Setup
+cd sweet-shop-frontend
+npm install          # Install dependencies
+npm install vitest @testing-library/react @testing-library/jest-dom --save-dev  # Testing libs
+npm run dev          # Runs frontend dev server
+
+🧪 Running Frontend Tests
+npm run test         # Runs all Vitest + Testing Library test cases
+
+
 Frontend Test Screenshot:
 
 
-📸 Screenshots
+📸 Website Screenshots
+🖥 Admin Dashboard – Add Sweet
 
-Admin – Add Sweet:
+📋 Admin Dashboard – Sweet Inventory
 
+🛒 Customer Dashboard – Purchase Sweets
 
-Admin – Sweet Inventory:
+🔍 Search & Filter Functionality
 
-
-Customer – Purchase Sweets:
-
-
-Search & Filter:
-
-
-TDD Flow – Red → Green → Refactor:
-
+🔁 TDD Flow – Red → Green → Refactor
 
 🤖 AI Usage
 
 Tools: ChatGPT
 
-Usage:
+How AI was used:
 
 Generated boilerplate for backend controllers/routes/models
 
@@ -164,29 +151,16 @@ AI accelerated boilerplate creation, reduced repetitive coding, and helped focus
 
 This project demonstrates:
 
-Test-Driven Development (TDD)
+✅ Test-Driven Development (TDD)
 
-Clean, modular code design
+✅ Clean, modular code design
 
-Modern frontend UI with React + Tailwind
+✅ Modern frontend UI with React + Tailwind
 
-End-to-end integration between backend and frontend
+✅ End-to-end integration between backend and frontend
 
 🙏 Acknowledgements
 
 Thank you Incubyte for this assessment and for encouraging TDD, clean coding, and AI-assisted development.
 
 — Milan Vadhel
-
-
----
-
-This is fully **terminal-friendly** and will render **perfectly on GitHub**.  
-
-If you want, I can also make a **version with all headings, lists, and images perfectly aligned and pre-formatted for copy-paste**, including **TDD flow diagram using ASCII art** for terminal preview.  
-
-Do you want me to do that?
-
-
-## 🗂 Project Structure
-

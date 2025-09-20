@@ -97,7 +97,6 @@ cd sweet-shop-backend
 npm install                 # Install dependencies
 npm install jest supertest ts-jest @types/jest --save-dev  # Install testing libraries
 npm run dev                 # Run backend server
-` ```
 
 Frontend Setup
 cd sweet-shop-frontend

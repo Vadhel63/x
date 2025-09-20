@@ -87,7 +87,7 @@ This project was developed as part of the **Incubyte Assessment Kata**, focusing
 - MongoDB (local or cloud)
 
 ### Backend Setup
-```bash
+
 cd sweet-shop-backend
 npm install
 npm run dev      # Runs backend

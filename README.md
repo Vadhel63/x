@@ -3,7 +3,7 @@
 ## 📖 Project Overview
 The **Sweet Shop Management System** is a full-stack web application for managing sweet shop operations:  
 - User authentication  
-- Role-based dashboards (Customer / Admin)  
+- Role-based dashboards (User/ Admin)  
 - Sweet inventory management  
 - Search, filter, purchase, and restock functionality  
 
@@ -97,6 +97,7 @@ npm test         # Run Jest tests
 cd sweet-shop-frontend
 npm install
 npm run dev      # Runs frontend
+---
 
 Environment Variables
 

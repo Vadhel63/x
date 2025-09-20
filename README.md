@@ -102,7 +102,7 @@ npm run dev      # Runs frontend
 🧪 Running Backend Tests
 npm test             # Runs all Jest + Supertest test cases
 
-
+---
 Backend Test Screenshot:
 
 

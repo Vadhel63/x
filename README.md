@@ -90,46 +90,88 @@ This project was developed as part of the **Incubyte Assessment Kata**, focusing
 
 ---
 
-### 🏗 Backend Setup
+
+---
+
+## 🛠 Features
+
+### 🔑 Authentication
+- Register: `POST /api/auth/register`  
+- Login: `POST /api/auth/login`  
+- JWT-based authentication  
+- Role-based access (Customer / Admin)  
+
+### 🍭 Admin Sweet Management
+- Add sweet: `POST /api/sweets`  
+- Update sweet: `PUT /api/sweets/:id`  
+- Delete sweet: `DELETE /api/sweets/:id`  
+- Restock sweet: `POST /api/sweets/:id/restock`  
+
+### 🛒 Customer Features
+- View all sweets: `GET /api/sweets`  
+- Search / Filter sweets: `GET /api/sweets/search`  
+- Purchase sweet: `POST /api/sweets/:id/purchase`  
+
+---
+
+## ⚡ API Endpoints
+
+| Method | Endpoint | Description | Access |
+|--------|----------|-------------|--------|
+| POST   | /api/auth/register | Register new user | Public |
+| POST   | /api/auth/login | Login user | Public |
+| POST   | /api/sweets | Add a sweet | Admin |
+| GET    | /api/sweets | List all sweets | Auth |
+| GET    | /api/sweets/search | Search sweets | Auth |
+| PUT    | /api/sweets/:id | Update sweet | Admin |
+| DELETE | /api/sweets/:id | Delete sweet | Admin |
+| POST   | /api/sweets/:id/purchase | Purchase sweet | Auth |
+| POST   | /api/sweets/:id/restock | Restock sweet | Admin |
+
+---
+
+## ⚙️ Installation & Testing (All-in-One Terminal)
 
 ```bash
+# -------------------------------
+# 🏗 Backend Setup
+# -------------------------------
 cd sweet-shop-backend
 npm install                 # Install dependencies
 npm install jest supertest ts-jest @types/jest --save-dev  # Install testing libraries
 npm run dev                 # Run backend server
 
-Frontend Setup
-cd sweet-shop-frontend
+# -------------------------------
+# 🏗 Frontend Setup
+# -------------------------------
+cd ../sweet-shop-frontend
 npm install                                        # Install dependencies
 npm install vitest @testing-library/react @testing-library/jest-dom --save-dev  # Install testing libraries
 npm run dev                                        # Run frontend server
 
-🌿 Environment Variables
+# -------------------------------
+# 🌿 Environment Variables
+# -------------------------------
+# Backend (.env)
+echo "PORT=5000" >> .env
+echo "MONGO_URI=<your-mongodb-url>" >> .env
+echo "JWT_SECRET=<your_secret_key>" >> .env
 
-Backend (.env)
+# Frontend (.env)
+echo "VITE_API_URL=http://localhost:5000/api" >> .env
 
-PORT=5000
-MONGO_URI=<your-mongodb-url>
-JWT_SECRET=<your_secret_key>
-
-
-Frontend (.env)
-
-VITE_API_URL=http://localhost:5000/api
-
-🧪 Running Tests
-
-Backend Tests (Jest + Supertest)
-
-cd sweet-shop-backend
+# -------------------------------
+# 🧪 Running Tests
+# -------------------------------
+# Backend Tests (Jest + Supertest)
+cd ../sweet-shop-backend
 npm test          # Runs all backend test cases
 
-
-Frontend Tests (Vitest + Testing Library)
-
-cd sweet-shop-frontend
+# Frontend Tests (Vitest + Testing Library)
+cd ../sweet-shop-frontend
 npm run test      # Runs all frontend test cases
 
+```
 📸 Screenshots
 ✅ Test Cases
 
@@ -190,6 +232,3 @@ This project demonstrates:
 Thank you Incubyte for this assessment and for encouraging TDD, clean coding, and AI-assisted development.
 
 — Milan Vadhel
-
-## 🗂 Project Structure
-

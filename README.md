@@ -42,7 +42,6 @@ This project was developed as part of the **Incubyte Assessment Kata**, focusing
 - React Hook Form + Zod for validation  
 - Vitest + Testing Library for component testing  
 
-
 ---
 
 ## 🛠 Features
@@ -82,51 +81,32 @@ This project was developed as part of the **Incubyte Assessment Kata**, focusing
 
 ---
 
-## ⚙️ Installation & Setup
+## 📸 Test Screenshots
 
-### 💻 Prerequisites
-- Node.js >=18  
-- MongoDB (local or cloud)
+**Backend Tests (Jest + Supertest)**  
+![Backend Tests](./assert/backend-tests.png)
 
----
-
-
----
-
-## 🛠 Features
-
-### 🔑 Authentication
-- Register: `POST /api/auth/register`  
-- Login: `POST /api/auth/login`  
-- JWT-based authentication  
-- Role-based access (Customer / Admin)  
-
-### 🍭 Admin Sweet Management
-- Add sweet: `POST /api/sweets`  
-- Update sweet: `PUT /api/sweets/:id`  
-- Delete sweet: `DELETE /api/sweets/:id`  
-- Restock sweet: `POST /api/sweets/:id/restock`  
-
-### 🛒 Customer Features
-- View all sweets: `GET /api/sweets`  
-- Search / Filter sweets: `GET /api/sweets/search`  
-- Purchase sweet: `POST /api/sweets/:id/purchase`  
+**Frontend Tests (Vitest + Testing Library)**  
+![Frontend Tests](./assert/frontend-tests.png)
 
 ---
 
-## ⚡ API Endpoints
+## 🖥 Application Screenshots
 
-| Method | Endpoint | Description | Access |
-|--------|----------|-------------|--------|
-| POST   | /api/auth/register | Register new user | Public |
-| POST   | /api/auth/login | Login user | Public |
-| POST   | /api/sweets | Add a sweet | Admin |
-| GET    | /api/sweets | List all sweets | Auth |
-| GET    | /api/sweets/search | Search sweets | Auth |
-| PUT    | /api/sweets/:id | Update sweet | Admin |
-| DELETE | /api/sweets/:id | Delete sweet | Admin |
-| POST   | /api/sweets/:id/purchase | Purchase sweet | Auth |
-| POST   | /api/sweets/:id/restock | Restock sweet | Admin |
+**Admin Dashboard – Add Sweet**  
+![Add Sweet](./assert/add-sweet.png)
+
+**Admin Dashboard – Sweet Inventory**  
+![Sweet Inventory](./assert/sweet-list.png)
+
+**Customer Dashboard – Purchase Sweets**  
+![Customer Dashboard](./assert/customer-dashboard.png)
+
+**Search & Filter Functionality**  
+![Search Filter](./assert/filter-search.png)
+
+**TDD Flow – Red → Green → Refactor**  
+![TDD Flow](./assert/tdd-flow.png)
 
 ---
 
@@ -170,65 +150,35 @@ npm test          # Runs all backend test cases
 # Frontend Tests (Vitest + Testing Library)
 cd ../sweet-shop-frontend
 npm run test      # Runs all frontend test cases
-
 ```
-📸 Screenshots
-✅ Test Cases
 
-Backend Tests:
+## 🤖 AI Usage
 
+**Tools:** ChatGPT
 
-Frontend Tests:
+**Usage:**
+- Generated boilerplate for backend controllers/routes/models
+- Created Jest + Vitest tests for TDD flow
+- Designed React components (Login, Signup, Dashboard)
+- Debugging and TypeScript fixes
 
+**Reflection:**  
+AI accelerated boilerplate creation, reduced repetitive coding, and helped focus on **business logic and architecture**. All code was manually reviewed and tested.
 
-🖥 Application Pages
+---
 
-Admin Dashboard – Add Sweet:
+## 🚀 Final Thoughts
 
+This project demonstrates:  
+- ✅ Test-Driven Development (TDD)  
+- ✅ Clean, modular code design  
+- ✅ Modern frontend UI with React + Tailwind  
+- ✅ End-to-end integration between backend and frontend  
 
-Admin Dashboard – Sweet Inventory:
+---
 
+## 🙏 Acknowledgements
 
-Customer Dashboard – Purchase Sweets:
+Thank you **Incubyte** for this assessment and for encouraging **TDD**, **clean coding**, and **AI-assisted development**.  
 
-
-Search & Filter Functionality:
-
-
-TDD Flow – Red → Green → Refactor:
-
-
-🤖 AI Usage
-
-Tools: ChatGPT
-
-Usage:
-
-Generated boilerplate for backend controllers/routes/models
-
-Created Jest + Vitest tests for TDD flow
-
-Designed React components (Login, Signup, Dashboard)
-
-Debugging and TypeScript fixes
-
-Reflection:
-AI accelerated boilerplate creation, reduced repetitive coding, and helped focus on business logic and architecture. All code was manually reviewed and tested.
-
-🚀 Final Thoughts
-
-This project demonstrates:
-
-✅ Test-Driven Development (TDD)
-
-✅ Clean, modular code design
-
-✅ Modern frontend UI with React + Tailwind
-
-✅ End-to-end integration between backend and frontend
-
-🙏 Acknowledgements
-
-Thank you Incubyte for this assessment and for encouraging TDD, clean coding, and AI-assisted development.
-
-— Milan Vadhel
+— **Milan Vadhel**
